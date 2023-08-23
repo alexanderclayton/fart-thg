@@ -1,7 +1,7 @@
 //import//
 import Logo from '../assets/THG Small (1).png'
 import { SignIn } from './SignIn'
-
+import { Logout } from './Logout'
 export const Header: React.FC = () => {
   return (
     <header className='p-4 flex w-full justify-between'>
@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
         </nav>
         <div>
             <SignIn />
-            <button className='px-2'>Create Account</button>
+            <Logout />
         </div>
     </header>
   )
