@@ -1,8 +1,12 @@
 //import//
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../firebase/firebaseAuth";
 import Logo from '../assets/THG Small (1).png'
 import { SignIn } from './SignIn'
 import { Logout } from './Logout'
 export const Header: React.FC = () => {
+  const [user] = useAuthState(auth)
+
   return (
     <header className='p-4 flex w-full justify-between'>
         <img src={Logo} alt="thg logo" className='w-[70px] h-[44px]'/>
@@ -16,8 +20,9 @@ export const Header: React.FC = () => {
             </ul>
         </nav>
         <div>
-            <SignIn />
-            <Logout />
+          {!user ? <SignIn /> : <Logout />}
+            
+            
         </div>
     </header>
   )
