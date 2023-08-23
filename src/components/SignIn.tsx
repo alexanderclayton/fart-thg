@@ -25,7 +25,7 @@ export const SignIn: React.FC = () => {
   const signIn = async (): Promise<void> => {
     try {
         await signInWithEmailAndPassword(auth, email, password)
-        console.log("Success!")
+        console.log("Signed In!")
         setEmail("")
         setPassword("")
     } catch (error: unknown) {
