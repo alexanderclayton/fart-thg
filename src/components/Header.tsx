@@ -1,5 +1,6 @@
 //import//
 import Logo from '../assets/THG Small (1).png'
+import { SignIn } from './SignIn'
 
 export const Header: React.FC = () => {
   return (
@@ -15,7 +16,7 @@ export const Header: React.FC = () => {
             </ul>
         </nav>
         <div>
-            <button className='px-2'>Sign In</button>
+            <SignIn />
             <button className='px-2'>Create Account</button>
         </div>
     </header>
