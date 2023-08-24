@@ -17,19 +17,41 @@ export const GalleryCards: React.FC = () => {
   };
 
   return (
-    <div>
+    <div className="pt-24 px-4 grid grid-cols-3">
       {GalleryCard.map((data: IGalleryCard, index: number) => (
-        <div key={index} className="w-[30%]">
+        <div key={index} className="w-full flex flex-col p-4">
           {!toggleStates[index] ? (
-            <div>
-              <img src={data.beforeImage} alt={`${data.alt} before`} />
+            <div className="flex flex-col items-center">
+              <img
+                src={data.beforeImage}
+                alt={`${data.alt} before`}
+                className="rounded-xl"
+              />
+              <button
+                onClick={() => handleToggle(index)}
+                className="w-[20%] bg-black text-white py-1 mt-3 rounded-full flex justify-between"
+              >
+                <div className="bg-white h-full w-[25%] rounded-full ml-1" />
+                <p className="pr-5 text-xl">Before</p>
+              </button>
             </div>
           ) : (
-            <div>
-              <img src={data.afterImage} alt={`${data.alt} after`} />
+            <div className="flex flex-col items-center">
+              <img
+                src={data.afterImage}
+                alt={`${data.alt} after`}
+                className="rounded-xl"
+              />
+              <button
+                onClick={() => handleToggle(index)}
+                className="w-[20%] bg-black text-white py-1 mt-3 rounded-full flex justify-between"
+              >
+                <p className="pl-5 text-xl">After</p>
+                <div className="bg-white h-full w-[25%] rounded-full mr-1" />
+                
+              </button>
             </div>
           )}
-          <button onClick={() => handleToggle(index)}>Toggle</button>
         </div>
       ))}
     </div>

@@ -8,7 +8,7 @@ export const Header: React.FC = () => {
   const [user] = useAuthState(auth)
 
   return (
-    <header className='p-4 flex w-full justify-between fixed'>
+    <header className='p-4 flex w-full justify-between fixed bg-white'>
         <img src={Logo} alt="thg logo" className='w-[70px] h-[44px]'/>
         <nav>
             <ul className='flex'>
