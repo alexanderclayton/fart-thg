@@ -1,11 +1,11 @@
 //import//
 import { useState } from "react";
 import { IGalleryCard } from "../data/galleryData";
-import { GalleryCard4416 } from "../data/galleryData";
+import { GalleryCard } from "../data/galleryData";
 
 export const GalleryCards: React.FC = () => {
   const [toggleStates, setToggleStates] = useState<boolean[]>(
-    GalleryCard4416.map(() => false)
+    GalleryCard.map(() => false)
   );
 
   const handleToggle = (index: number) => {
@@ -18,7 +18,7 @@ export const GalleryCards: React.FC = () => {
 
   return (
     <div>
-      {GalleryCard4416.map((data: IGalleryCard, index: number) => (
+      {GalleryCard.map((data: IGalleryCard, index: number) => (
         <div key={index} className="w-[30%]">
           {!toggleStates[index] ? (
             <div>
